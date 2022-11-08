@@ -1,0 +1,66 @@
+
+
+'''
+restaurent billing system
+''' 
+
+f = open("Bill.txt","w+")
+f.write("Today's Menu:")
+n1 = f.write("\n Press 1 for Kadhaai Paneer @200")
+n2 = f.write("\n Press 2 for Naan @20")
+n3 = f.write("\n Press 3 for Daal Makhni @150")
+n4 = f.write("\n Press 4 for Aloo Parathe @20")
+n5 = f.write("\n Press 5 for Roti Sabji @199")
+n6 = f.write("\n Press 6 for Chai @50")
+f.seek(0)
+data = f.read()
+print(data)
+num0 = int(input("Enter no. of dishes you want: "))
+total = 0
+for i in range(num0):
+    try:
+        num1 = int(input("Enter Your choice %d: "%(i+1)))
+        num2 = int(input("Enter Your Quantity: "))
+        if(num1 == 1):
+            print("You chooces Kadhaai Paneer and your quantity is",num2)
+            total = total + 200*num2
+            f.write("\nYou chooces Kadhaai Paneer and your quantity is: ")
+            f.write(str(num2))
+            
+        elif(num1 == 2):
+            print("You chooces Naan and your quantity is",num2)
+            total = total + 20*num2
+            f.write("\nYou chooses naan and your quantity is ")
+            f.write(str(num2))
+        elif(num1 == 3):
+            a3 = ("You chooces Daal Makhni and your quantity is ",num2)
+            total = total + 150*num2
+            f.write("\nYou chooces Daal Makhni and your quantity is: ")
+            f.write(str(num2))
+            
+        elif(num1 == 4):
+            print("You chooces Aloo Parathe and your quantity is",num2)
+            total = total + 20*num2
+            f.write("\nYou chooces Aloo Parathe and your quantity is: ")
+            f.write(str(num2))
+            
+        elif(num1 == 5):
+            print("You chooces Roti Sabji and your quantity is ",num2)
+            total = total + 199*num2
+            f.write("\nYou chooces Roti Sabji and your quantity is: ")
+            f.write(str(num2))
+            
+        elif(num1 == 6):
+            print("You chooces Chai and your quantity is ",num2)
+            total = total + 50*num2
+            f.write("\nYou chooces Chai and your quantity is: ")
+            f.write(str(num2))
+            
+    except:
+        print("Please enter a valid input")
+print("Your Total is Rs.",total)
+f.write("\nYour total bill: ")
+f.write(str(total))
+f.close()
+
+
